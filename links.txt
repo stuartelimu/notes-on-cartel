@@ -1,0 +1,9 @@
+https://askubuntu.com/questions/173924/how-to-run-a-cron-job-using-the-sudo-command
+
+https://www.cyberciti.biz/faq/how-to-run-cron-job-every-minute-on-linuxunix/
+
+https://simplebackups.com/blog/docker-postgres-backup-restore-guide-with-examples/
+
+https://www.linode.com/docs/guides/how-to-back-up-your-postgresql-database/
+
+https://crontab.guru/#*/2_*_*_*_*
