@@ -1,0 +1,42 @@
+gh pwd
+---------------
+test
+
+/home/tkmadministrator/Documents/registration.dump
+
+sudo docker exec -i tkm-staging_db_1 psql -d postgres -U postgres < /home/tkmadministrator/Documents/registration.dump
+
+cat your_dump.sql | docker exec -i --user postgres your-db-container psql -U postgres
+
+
+sudo mount /tmp -o remount,exec
+
+db backup
+docker exec -i postgres /usr/bin/pg_dump \
+ -U <postgresql_user> <postgresql_database> > postgres-backup.sql 
+
+docker exec -i postgres pg_dump \
+ -U postgres postgres > db-backup.sql 
+
+secure copy file from one server to another
+------------------------------------------------
+scp -i /.ssh/id_tkmdb church"ip:/home/church/backup.sql /Users/stue/Downloads
+
+
+backup db
+-----------------------
+sudo docker exec -i tkm-staging_db_1  pg_dump  -U postgres postgres > /home/tkmadministrator/Development/db-backup.sql
+
+restore db backup
+----------------------
+sudo docker exec -i tkm-staging_db_1 psql -d postgres -U postgres < /home/tkmadministrator/Downloads/backup.sql
+
+* * * * * touch /home/tkmadministrator/Development/test.txt
+
+*/2 * * * * docker exec -i tkm-staging_db_1  pg_dump  -U postgres postgres > /home/tkmadministrator/Development/db-backup.sql
+
+/home/tkmadministrator/Development/tkm-staging/tkm-db-backup
+
+*/2 * * * * docker exec -i tkm-staging_db_1  pg_dump  -U postgres postgres > /home/tkmadministrator/Development/tkm-staging/tkm-db-backup/backup.sql
+
+
